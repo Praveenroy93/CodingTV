@@ -72,7 +72,7 @@ public class ExtentReportListener extends BasePage implements ITestListener {
 		
 		extent.setSystemInfo("OS", System.getProperty("os.name"));
         extent.setSystemInfo("Host Name", System.getProperty("user.name"));
-        extent.setSystemInfo("Admin.Environmentironment", "QA");
+        extent.setSystemInfo("Admin.Environment", "QA");
         extent.setSystemInfo("User Name", "Praveen");
 		extent.attachReporter(htmlReporter);
 		extent.setReportUsesManualConfiguration(true);
