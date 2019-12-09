@@ -28,6 +28,8 @@ public class FlightBookingPage extends BasePage {
 
 
     Logger logger= LogManager.getLogger(SignInPage.class);
+    
+    // To collect the locators of the elements
 
 	@FindBy(id = "FromTag")
 	private WebElement fromLocation;
@@ -55,6 +57,8 @@ public class FlightBookingPage extends BasePage {
 	private WebElement identifier;
 
 
+	//Constructor of page class and initialize elements with driver
+
 	public FlightBookingPage(WebDriver driver){
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -72,6 +76,7 @@ public class FlightBookingPage extends BasePage {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		try {
+			// To fill the from location
 			wait.until(ExpectedConditions.visibilityOf(fromLocation));		
 			if(fromLocation.isEnabled()) {
 				fromLocation.sendKeys("Bangalore");
@@ -96,6 +101,8 @@ public class FlightBookingPage extends BasePage {
 		}
 
 		try {
+			// To fill the to location
+
 			wait.until(ExpectedConditions.visibilityOf(toLocation));
 			if(toLocation.isEnabled()) {
 				toLocation.sendKeys("Delhi");
@@ -122,7 +129,7 @@ public class FlightBookingPage extends BasePage {
 
 
 		try {
-
+			//to click on the Departer on button to open the calendar
 			wait.until(ExpectedConditions.elementToBeClickable(departerDate));
 			if(departerDate.isEnabled()) {
 				departerDate.click();
@@ -141,7 +148,7 @@ public class FlightBookingPage extends BasePage {
 					"Failed to click on depart on button.");
 		}
 		
-		// Select a date from calander
+		// Select a date from calendar
 		
 		try {
 
@@ -186,6 +193,7 @@ public class FlightBookingPage extends BasePage {
 		}
 		
 		
+		// To check if the specified element apears or not on the search page for assertion
 		wait.until(ExpectedConditions.visibilityOf(identifier));
 		
 		try {
