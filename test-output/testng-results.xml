@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[Reporter log started]]>
+    </line>
+    <line>
+      <![CDATA[Properties have been initiated. Moving to next step]]>
+    </line>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="27421" started-at="2019-12-09T09:21:29Z" finished-at="2019-12-09T09:21:56Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="27421" started-at="2019-12-09T09:21:29Z" finished-at="2019-12-09T09:21:56Z">
+      <class name="com.tv.tests.SignInTest">
+        <test-method status="PASS" signature="settingUp()[pri:0, instance:com.tv.tests.SignInTest@fdefd3f]" name="settingUp" is-config="true" duration-ms="20" started-at="2019-12-09T09:21:29Z" finished-at="2019-12-09T09:21:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- settingUp -->
+        <test-method status="PASS" signature="loadProperties()[pri:0, instance:com.tv.tests.SignInTest@fdefd3f]" name="loadProperties" is-config="true" duration-ms="23" started-at="2019-12-09T09:21:29Z" finished-at="2019-12-09T09:21:29Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Reporter log started]]>
+            </line>
+            <line>
+              <![CDATA[Properties have been initiated. Moving to next step]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- loadProperties -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.tv.tests.SignInTest@fdefd3f]" name="setUp" is-config="true" duration-ms="10358" started-at="2019-12-09T09:21:29Z" finished-at="2019-12-09T09:21:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="SignInErrorTest()[pri:1, instance:com.tv.tests.SignInTest@fdefd3f]" name="SignInErrorTest" duration-ms="15161" started-at="2019-12-09T09:21:39Z" description="Verifying the SignIn Error test" finished-at="2019-12-09T09:21:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SignInErrorTest -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.tv.tests.SignInTest@fdefd3f]" name="getResult" is-config="true" duration-ms="1090" started-at="2019-12-09T09:21:55Z" finished-at="2019-12-09T09:21:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=SignInErrorTest status=SUCCESS method=SignInTest.SignInErrorTest()[pri:1, instance:com.tv.tests.SignInTest@fdefd3f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.tv.tests.SignInTest@fdefd3f]" name="tearDown" is-config="true" duration-ms="132" started-at="2019-12-09T09:21:56Z" finished-at="2019-12-09T09:21:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="endTest()[pri:0, instance:com.tv.tests.SignInTest@fdefd3f]" name="endTest" is-config="true" duration-ms="57" started-at="2019-12-09T09:22:01Z" finished-at="2019-12-09T09:22:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endTest -->
+      </class> <!-- com.tv.tests.SignInTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
