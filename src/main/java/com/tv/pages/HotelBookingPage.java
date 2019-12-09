@@ -23,39 +23,39 @@ public class HotelBookingPage extends BasePage{
 
 	Logger logger= LogManager.getLogger(SignInPage.class);
 
-    @FindBy(linkText = "Hotels")
-    private WebElement hotelLink1;
-    
-    @FindBy(xpath="(//a[@href='/hotels'])[2]")
-    private WebElement hotelLink;
+	@FindBy(linkText = "Hotels")
+	private WebElement hotelLink1;
 
-    @FindBy(id = "Tags")
-    private WebElement localityTextBox;
-    
-    @FindBy(xpath="(//li[@class='list'])[1]/a")
-    private WebElement locationText;
+	@FindBy(xpath="(//a[@href='/hotels'])[2]")
+	private WebElement hotelLink;
 
-    @FindBy(id = "SearchHotelsButton")
-    private WebElement searchButton;
+	@FindBy(id = "Tags")
+	private WebElement localityTextBox;
 
-    @FindBy(id = "travellersOnhome")
-    private WebElement travellerSelection;
-    
-    @FindBy(xpath="//*[text()='Showing hotels around']")
-    private WebElement identifier;
-    
-    
-    public HotelBookingPage(WebDriver driver){
+	@FindBy(xpath="(//li[@class='list'])[1]/a")
+	private WebElement locationText;
+
+	@FindBy(id = "SearchHotelsButton")
+	private WebElement searchButton;
+
+	@FindBy(id = "travellersOnhome")
+	private WebElement travellerSelection;
+
+	@FindBy(xpath="//*[text()='Showing hotels around']")
+	private WebElement identifier;
+
+
+	public HotelBookingPage(WebDriver driver){
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-    
-    /**
-     * This method is to search the hotel in a specific location.
-     * @throws Exception
-     */
-    
-    public void searchHotel() throws Exception{
+
+	/**
+	 * This method is to search the hotel in a specific location.
+	 * @throws Exception
+	 */
+
+	public void searchHotel() throws Exception{
 
 		WebDriverWait wait= new WebDriverWait(driver, 10);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -84,7 +84,10 @@ public class HotelBookingPage extends BasePage{
 			wait.until(ExpectedConditions.visibilityOf(localityTextBox));
 			if(localityTextBox.isEnabled()) {
 				localityTextBox.sendKeys("Indiranagar, Bangalore");
+				//wait for the auto complete options to appear for the location
+
 				Thread.sleep(5000);
+				// As the search location will be first list only so click and escape to not fill the date
 				localityTextBox.sendKeys(Keys.ENTER, Keys.ESCAPE);
 
 				logger.info("Filled location text box successfully.");
@@ -100,17 +103,17 @@ public class HotelBookingPage extends BasePage{
 			Assert.assertFalse(false, 
 					"Unable to fill location text box due to .");
 		}
-		
-		
+
+
 		/**
 		 * The below code will select the text 1 room, 2 adults from the drop down and perform search operation
 		 */
-		
+
 		wait.until(ExpectedConditions.visibilityOf(travellerSelection));
 		Select select= new Select(travellerSelection);
 		select.selectByIndex(1);
-		
-		
+
+
 		try {
 
 			wait.until(ExpectedConditions.elementToBeClickable(searchButton));
@@ -131,8 +134,9 @@ public class HotelBookingPage extends BasePage{
 					"Failed to click on seacrh button to Login.");
 		}
 
-
+		// The below is to identify one specific thing on search result page
 		wait.until(ExpectedConditions.visibilityOf(identifier));
+		
 		try {
 			if(identifier.isDisplayed())
 			{
