@@ -44,6 +44,7 @@ public class HotelBookingPage extends BasePage{
 	@FindBy(xpath="//*[text()='Showing hotels around']")
 	private WebElement identifier;
 
+	//Constructor of page class and initialize elements with driver
 
 	public HotelBookingPage(WebDriver driver){
 		this.driver = driver;
@@ -62,6 +63,8 @@ public class HotelBookingPage extends BasePage{
 
 
 		try {
+			//To click on the Hotel Link 
+
 			wait.until(ExpectedConditions.visibilityOf(hotelLink));		
 			if(hotelLink.isEnabled()) {
 				hotelLink.click();
@@ -81,6 +84,8 @@ public class HotelBookingPage extends BasePage{
 		}
 
 		try {
+			// To fill the Location to search the hotel in a specific location
+			
 			wait.until(ExpectedConditions.visibilityOf(localityTextBox));
 			if(localityTextBox.isEnabled()) {
 				localityTextBox.sendKeys("Indiranagar, Bangalore");
@@ -134,7 +139,7 @@ public class HotelBookingPage extends BasePage{
 					"Failed to click on seacrh button to Login.");
 		}
 
-		// The below is to identify one specific thing on search result page
+		// The below is to identify one specific thing on search result page to assert the result
 		wait.until(ExpectedConditions.visibilityOf(identifier));
 		
 		try {

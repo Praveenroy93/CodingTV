@@ -33,8 +33,8 @@ public class HotelBookingTest extends BasePage{
 
 
 
-
-	@BeforeMethod // this method will be executed before every @test method
+	// this method will be executed before every @test method
+	@BeforeMethod 
 	public void setUp() throws Exception {
 		basePage = new BasePage();
 		prop = basePage.initialize_Properties();
