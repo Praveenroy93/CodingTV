@@ -31,7 +31,7 @@ public class HotelBookingTest extends BasePage{
 	public Properties prop;
 	public HotelBookingPage hotelBookingPage;
 
-	
+
 
 
 	@BeforeMethod // this method will be executed before every @test method
@@ -48,7 +48,7 @@ public class HotelBookingTest extends BasePage{
 	 * @throws Exception
 	 */
 	@Test(priority = 1, description = "Verifying the hotel search  test")
-		public void SignInErrorTest() throws Exception {
+	public void hotelSearchTest() throws Exception {
 
 		logger.info("Hotel Search test Started");
 
@@ -59,7 +59,7 @@ public class HotelBookingTest extends BasePage{
 			hotelBookingPage.searchHotel();
 			logger.info("Hotel Search Test passed");
 			test.log(Status.PASS, "Hotel Search Test passed");
-			
+
 
 		}
 		catch (Exception e) {
@@ -74,8 +74,8 @@ public class HotelBookingTest extends BasePage{
 		logger.info("Hotel Search Test Completed");
 		test.log(Status.INFO, "Hotel Search Test Completed");
 	}
-	
-	}
+
+}
 
 
 
