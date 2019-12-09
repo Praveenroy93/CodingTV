@@ -1,54 +1,80 @@
 package com.tv.tests;
-import com.sun.javafx.PlatformUtil;
+import java.io.IOException;
+import java.util.Properties;
+
+import org.apache.commons.mail.EmailException;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+import org.testng.Reporter;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-public class HotelBookingTest {
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
+import com.tv.Base.BasePage;
+import com.tv.listeners.ExtentReportListener;
+import com.tv.pages.HotelBookingPage;
 
-    WebDriver driver = new ChromeDriver();
+@Listeners({ExtentReportListener.class})
+public class HotelBookingTest extends BasePage{
 
-    @FindBy(linkText = "Hotels")
-    private WebElement hotelLink;
 
-    @FindBy(id = "Tags")
-    private WebElement localityTextBox;
+	Logger logger= LogManager.getLogger(HotelBookingTest.class);
 
-    @FindBy(id = "SearchHotelsButton")
-    private WebElement searchButton;
+	public BasePage basePage;
+	public WebDriver driver;
+	public Properties prop;
+	public HotelBookingPage hotelBookingPage;
 
-    @FindBy(id = "travellersOnhome")
-    private WebElement travellerSelection;
+	
 
-    @Test
-    public void shouldBeAbleToSearchForHotels() {
-        setDriverPath();
 
-        driver.get("https://www.cleartrip.com/");
-        hotelLink.click();
+	@BeforeMethod // this method will be executed before every @test method
+	public void setUp() throws Exception {
+		basePage = new BasePage();
+		prop = basePage.initialize_Properties();
+		driver = basePage.initialize_driver();
+		driver.get(prop.getProperty("hotelBookingUrl"));
+		hotelBookingPage = new HotelBookingPage(driver);
 
-        localityTextBox.sendKeys("Indiranagar, Bangalore");
+	}
+	/**
+	 * This Test case will execute the hotel search functionality
+	 * @throws Exception
+	 */
+	@Test(priority = 1, description = "Verifying the hotel search  test")
+		public void SignInErrorTest() throws Exception {
 
-        new Select(travellerSelection).selectByVisibleText("1 room, 2 adults");
-        searchButton.click();
+		logger.info("Hotel Search test Started");
 
-        driver.quit();
+		try {
+			test = extent.createTest("Hotel Search Test");
 
-    }
 
-    private void setDriverPath() {
-        if (PlatformUtil.isMac()) {
-            System.setProperty("webdriver.chrome.driver", "chromedriver");
-        }
-        if (PlatformUtil.isWindows()) {
-            System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-        }
-        if (PlatformUtil.isLinux()) {
-            System.setProperty("webdriver.chrome.driver", "chromedriver_linux");
-        }
-    }
+			hotelBookingPage.searchHotel();
+			test.log(Status.PASS, "Hotel Search Test passed");
+			
 
-}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			logger.error("Hotel Search test Failed due to " + e.getMessage());
+			test.log(Status.FAIL, MarkupHelper.createLabel("Hotel Search test Failed", ExtentColor.RED));
+
+			finalAssertTrue(false,
+					"Hotel Search test Failed!!");
+
+		}
+		logger.info("Hotel Search Test Completed");
+		test.log(Status.INFO, "Hotel Search Test Completed");
+	}
+	
+	}
+
+
+

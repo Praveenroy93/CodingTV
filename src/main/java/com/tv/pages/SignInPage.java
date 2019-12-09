@@ -21,11 +21,6 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.tv.Base.BasePage;
 
 
-/**
- * @author Praveen
- *
- */
-
 public class SignInPage extends BasePage{
 
 	Logger logger= LogManager.getLogger(SignInPage.class);
@@ -55,14 +50,12 @@ public class SignInPage extends BasePage{
 
 	/**
 	 * This method is to perform the sign
-	 * @param un
-	 * @param pwd
 	 * @throws Exception
 	 */
 	public void signIn() throws Exception{
 
-		WebDriverWait wait= new WebDriverWait(driver, 50);
-		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+		WebDriverWait wait= new WebDriverWait(driver, 10);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 
 		try {
@@ -102,6 +95,9 @@ public class SignInPage extends BasePage{
 					"Unable to click on Sign In successfully.");
 		}
 		
+		/**
+		 * The below code will switch to the specific frame and click on sign button.
+		 */
 		driver.switchTo().frame("modal_window");
 		try {
 

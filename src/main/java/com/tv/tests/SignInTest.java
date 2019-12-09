@@ -44,6 +44,10 @@ public class SignInTest extends BasePage{
 		signIn = new SignInPage(driver);
 
 	}
+	/**
+	 * This Test case will execute the signIn error test functionality
+	 * @throws Exception
+	 */
 	@Test(priority = 1, description = "Verifying the SignIn Error test")
 		public void SignInErrorTest() throws Exception {
 

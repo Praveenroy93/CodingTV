@@ -177,7 +177,7 @@ public class BasePage{
 	public Properties initialize_Properties() {
 		prop = new Properties();
 		try {
-			FileInputStream ip = new FileInputStream("/Users/Praveen/git/codingRound/src/main/java/com/tv/config/config.properties");
+			FileInputStream ip = new FileInputStream("/Users/Praveen/git/CodingTV/src/main/java/com/tv/config/config.properties");
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
