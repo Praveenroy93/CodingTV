@@ -57,6 +57,7 @@ public class HotelBookingTest extends BasePage{
 
 
 			hotelBookingPage.searchHotel();
+			logger.info("Hotel Search Test passed");
 			test.log(Status.PASS, "Hotel Search Test passed");
 			
 
