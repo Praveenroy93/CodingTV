@@ -34,6 +34,7 @@ import com.tv.Base.BasePage;
  * @author Praveen
  *
  */
+// To generate the extent report
 
 public class ExtentReportListener extends BasePage implements ITestListener {
 	
@@ -62,8 +63,6 @@ public class ExtentReportListener extends BasePage implements ITestListener {
 		}
 		ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(OUTPUT_FOLDER + FILE_NAME);
 		
-		 
-	        
 		htmlReporter.config().setDocumentTitle("Automation Test Results");
 		htmlReporter.config().setReportName("Automation Test Results");
 		htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
@@ -77,11 +76,6 @@ public class ExtentReportListener extends BasePage implements ITestListener {
         extent.setSystemInfo("User Name", "Praveen");
 		extent.attachReporter(htmlReporter);
 		extent.setReportUsesManualConfiguration(true);
-		
-		
-
-		
-		
 		return extent;
 	}
 
@@ -120,20 +114,13 @@ public class ExtentReportListener extends BasePage implements ITestListener {
 	@SuppressWarnings("unchecked")
 	public synchronized void onTestSuccess(ITestResult result) {
 		System.out.println((result.getMethod().getMethodName() + " passed!"));
-		//commented on 12th July.
-	//	test.get().pass("Test passed");
 		try {
 			test.get().pass(result.getMethod().getMethodName() + " passed!",
 					MediaEntityBuilder.createScreenCaptureFromPath(captureScreenShot(result, "pass")).build());
 			
 			test.get().log(Status.PASS, MarkupHelper.createLabel(result.getName()+" Test Case PASSED", ExtentColor.GREEN));
-    	//	String screenShot = captureScreenShot(result,"pass");
-
-        //    test.get().pass("Screen Shot : " + ((IAddsMedia<ExtentTest>) test).addScreenCaptureFromPath(screenShot));
-
 			
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
