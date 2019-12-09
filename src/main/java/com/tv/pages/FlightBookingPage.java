@@ -48,7 +48,7 @@ public class FlightBookingPage extends BasePage {
 	@FindBy(xpath="//*[@id='ui-datepicker-div']/div[1]/table/tbody/tr[3]/td[7]/a")
 	private WebElement pickDate;
 
-	@FindBy(className = "searchSummary")
+	@FindBy(id = "SearchBtn")
 	private WebElement searchFlight;
 
 	@FindBy(xpath="//*[@class='searchSummary']")
@@ -78,8 +78,8 @@ public class FlightBookingPage extends BasePage {
 				//wait for the auto complete options to appear for the from location
 		        //select the first item from the destination auto complete list
 
-				List<WebElement> originOptions = fromAutocomplete.findElements(By.tagName("li"));
-		        originOptions.get(0).click();
+				List<WebElement> fromOptions = fromAutocomplete.findElements(By.tagName("li"));
+				fromOptions.get(0).click();
 				logger.info("Filled from location successfully.");
 				test.pass("Filled from location successfully.",MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
 
@@ -102,8 +102,8 @@ public class FlightBookingPage extends BasePage {
 				//wait for the auto complete options to appear for the location
 		        //select the first item from the destination auto complete list
 
-				List<WebElement> originOptions = toAutocomplete.findElements(By.tagName("li"));
-		        originOptions.get(0).click();
+				List<WebElement> toOptions = toAutocomplete.findElements(By.tagName("li"));
+				toOptions.get(0).click();
 				
 				// As the search location will be first list only so click and escape to not fill the date
 				logger.info("Filled to location successfully.");

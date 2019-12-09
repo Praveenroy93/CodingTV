@@ -38,7 +38,7 @@ public class FlightBookingTest extends BasePage{
 		basePage = new BasePage();
 		prop = basePage.initialize_Properties();
 		driver = basePage.initialize_driver();
-		driver.get(prop.getProperty("hotelBookingUrl"));
+		driver.get(prop.getProperty("flightBookingUrl"));
 		flightBookingPage = new FlightBookingPage(driver);
 
 	}

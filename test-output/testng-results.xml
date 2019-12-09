@@ -8,16 +8,16 @@
       <![CDATA[Properties have been initiated. Moving to next step]]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="38523" started-at="2019-12-09T13:52:03Z" finished-at="2019-12-09T13:52:42Z">
+  <suite name="Default suite" duration-ms="37745" started-at="2019-12-09T14:31:39Z" finished-at="2019-12-09T14:32:16Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="38523" started-at="2019-12-09T13:52:03Z" finished-at="2019-12-09T13:52:42Z">
-      <class name="com.tv.tests.HotelBookingTest">
-        <test-method status="PASS" signature="settingUp()[pri:0, instance:com.tv.tests.HotelBookingTest@fdefd3f]" name="settingUp" is-config="true" duration-ms="18" started-at="2019-12-09T13:52:03Z" finished-at="2019-12-09T13:52:03Z">
+    <test name="Default test" duration-ms="37745" started-at="2019-12-09T14:31:39Z" finished-at="2019-12-09T14:32:16Z">
+      <class name="com.tv.tests.FlightBookingTest">
+        <test-method status="PASS" signature="settingUp()[pri:0, instance:com.tv.tests.FlightBookingTest@19d37183]" name="settingUp" is-config="true" duration-ms="181" started-at="2019-12-09T14:31:39Z" finished-at="2019-12-09T14:31:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- settingUp -->
-        <test-method status="PASS" signature="loadProperties()[pri:0, instance:com.tv.tests.HotelBookingTest@fdefd3f]" name="loadProperties" is-config="true" duration-ms="17" started-at="2019-12-09T13:52:03Z" finished-at="2019-12-09T13:52:03Z">
+        <test-method status="PASS" signature="loadProperties()[pri:0, instance:com.tv.tests.FlightBookingTest@19d37183]" name="loadProperties" is-config="true" duration-ms="34" started-at="2019-12-09T14:31:39Z" finished-at="2019-12-09T14:31:39Z">
           <reporter-output>
             <line>
               <![CDATA[Reporter log started]]>
@@ -27,34 +27,34 @@
             </line>
           </reporter-output>
         </test-method> <!-- loadProperties -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.tv.tests.HotelBookingTest@fdefd3f]" name="setUp" is-config="true" duration-ms="10512" started-at="2019-12-09T13:52:03Z" finished-at="2019-12-09T13:52:14Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.tv.tests.FlightBookingTest@19d37183]" name="setUp" is-config="true" duration-ms="13534" started-at="2019-12-09T14:31:39Z" finished-at="2019-12-09T14:31:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="SignInErrorTest()[pri:1, instance:com.tv.tests.HotelBookingTest@fdefd3f]" name="SignInErrorTest" duration-ms="25433" started-at="2019-12-09T13:52:14Z" description="Verifying the hotel search  test" finished-at="2019-12-09T13:52:39Z">
+        <test-method status="PASS" signature="flightSearchTest()[pri:1, instance:com.tv.tests.FlightBookingTest@19d37183]" name="flightSearchTest" duration-ms="21767" started-at="2019-12-09T14:31:52Z" description="Verifying the flight search  test" finished-at="2019-12-09T14:32:14Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SignInErrorTest -->
-        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.tv.tests.HotelBookingTest@fdefd3f]" name="getResult" is-config="true" duration-ms="1516" started-at="2019-12-09T13:52:40Z" finished-at="2019-12-09T13:52:41Z">
+        </test-method> <!-- flightSearchTest -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.tv.tests.FlightBookingTest@19d37183]" name="getResult" is-config="true" duration-ms="1988" started-at="2019-12-09T14:32:14Z" finished-at="2019-12-09T14:32:16Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=SignInErrorTest status=SUCCESS method=HotelBookingTest.SignInErrorTest()[pri:1, instance:com.tv.tests.HotelBookingTest@fdefd3f] output={null}]]]>
+                <![CDATA[[TestResult name=flightSearchTest status=SUCCESS method=FlightBookingTest.flightSearchTest()[pri:1, instance:com.tv.tests.FlightBookingTest@19d37183] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.tv.tests.HotelBookingTest@fdefd3f]" name="tearDown" is-config="true" duration-ms="157" started-at="2019-12-09T13:52:41Z" finished-at="2019-12-09T13:52:42Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.tv.tests.FlightBookingTest@19d37183]" name="tearDown" is-config="true" duration-ms="254" started-at="2019-12-09T14:32:16Z" finished-at="2019-12-09T14:32:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="endTest()[pri:0, instance:com.tv.tests.HotelBookingTest@fdefd3f]" name="endTest" is-config="true" duration-ms="55" started-at="2019-12-09T13:52:47Z" finished-at="2019-12-09T13:52:47Z">
+        <test-method status="PASS" signature="endTest()[pri:0, instance:com.tv.tests.FlightBookingTest@19d37183]" name="endTest" is-config="true" duration-ms="480" started-at="2019-12-09T14:32:21Z" finished-at="2019-12-09T14:32:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endTest -->
-      </class> <!-- com.tv.tests.HotelBookingTest -->
+      </class> <!-- com.tv.tests.FlightBookingTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
