@@ -51,7 +51,7 @@ public class FlightBookingPage extends BasePage {
 	@FindBy(id = "SearchBtn")
 	private WebElement searchFlight;
 
-	@FindBy(xpath="//*[@class='searchSummary']")
+	@FindBy(xpath="(//*[contains(text(),'Early Morning')])[2]")
 	private WebElement identifier;
 
 
