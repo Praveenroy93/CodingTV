@@ -21,6 +21,7 @@ import com.tv.Base.BasePage;
 import com.tv.listeners.ExtentReportListener;
 import com.tv.pages.SignInPage;
 
+// To generate the extent report
 @Listeners({ExtentReportListener.class})
 public class SignInTest extends BasePage{
 

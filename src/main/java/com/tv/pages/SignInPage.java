@@ -25,7 +25,7 @@ public class SignInPage extends BasePage{
 
 	Logger logger= LogManager.getLogger(SignInPage.class);
 
-	//1.a: define page objects (PAGE OR) : using PageFactory Pattern
+	//define page objects (PAGE OR) : using PageFactory Pattern
 
 
 	@FindBy(xpath="//*[text()='Your trips']")
@@ -42,14 +42,14 @@ public class SignInPage extends BasePage{
 
 
 
-	//1.b: Constructor of page class and initialize elements with driver
+	//Constructor of page class and initialize elements with driver
 	public SignInPage(WebDriver driver){
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
 	/**
-	 * This method is to perform the sign
+	 * This method is to perform the signinError validation
 	 * @throws Exception
 	 */
 	public void signIn() throws Exception{
@@ -59,6 +59,8 @@ public class SignInPage extends BasePage{
 
 
 		try {
+			//To click on the Your Trip button
+			
 			wait.until(ExpectedConditions.visibilityOf(yourTrip));		
 			if(yourTrip.isEnabled()) {
 				yourTrip.click();
@@ -78,6 +80,8 @@ public class SignInPage extends BasePage{
 		}
 
 		try {
+			//To click on the Sign In button
+
 			wait.until(ExpectedConditions.visibilityOf(signIn));
 			if(signIn.isEnabled()) {
 				signIn.click();
@@ -96,7 +100,7 @@ public class SignInPage extends BasePage{
 		}
 		
 		/**
-		 * The below code will switch to the specific frame and click on sign button.
+		 * The below code will switch to the specific frame and click on signIn button.
 		 */
 		driver.switchTo().frame("modal_window");
 		try {
@@ -120,6 +124,8 @@ public class SignInPage extends BasePage{
 		}
 
 
+		// To check if the error message appear or not
+		
 		wait.until(ExpectedConditions.visibilityOf(errorMessage));
 		highlightSuccess(errorMessage);
 		try {
