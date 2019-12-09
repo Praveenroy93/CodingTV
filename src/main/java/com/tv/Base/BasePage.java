@@ -100,7 +100,8 @@ public class BasePage{
 
 
 
-
+// To initialize the driver and properties to be used in all the page
+	
 	public static WebDriver driver;
 	public Actions action;
 	public Properties prop;
@@ -119,8 +120,12 @@ public class BasePage{
 
 
 		if(browserName.equalsIgnoreCase("chrome")) {
+			// To use directly the specific browser without keeping and specifying the location of the browser
+			
 			WebDriverManager.chromedriver().setup();
 
+			//To Run for the headless chrome browser
+			
 //			ChromeOptions options = new ChromeOptions();
 //			options.addArguments("--headless");
 //			options.addArguments("--disable-gpu");
@@ -177,7 +182,7 @@ public class BasePage{
 	public Properties initialize_Properties() {
 		prop = new Properties();
 		try {
-			FileInputStream ip = new FileInputStream("/Users/Praveen/git/CodingTV/src/main/java/com/tv/config/config.properties");
+			FileInputStream ip = new FileInputStream(System.getProperty("user.dir")+"/src/main/java/com/tv/config/config.properties");
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
